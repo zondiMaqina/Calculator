@@ -12,13 +12,13 @@ let operand_one;
 let operand_two;
 let operator;
 
-/* // digit function
+ // digit function
 function num0(){
-    
+    input.value += 0;
 }
 
 function num1(){
-
+    input.value += 1;
 }
 
 function num2(){
@@ -60,10 +60,22 @@ function num9(){
 function period(){
 
 }
- */
+
 
 function operate(){
 
+    if (operator == add){
+        return operand_one + operand_two ;
+
+    } else if(operator = subtract){
+        return operand_one - operand_two ;
+
+    } else if (operator == multiply){
+        return operand_one * operand_two ;
+
+    }else if(operator == divide){
+        return operand_one / operand_two ;
+    }
     
 }
 
@@ -87,5 +99,5 @@ function divide(){
 }
 
 function remove(){
-    console.log("8")
+    console.log("clear")
 }
