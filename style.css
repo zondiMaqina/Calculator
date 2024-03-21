@@ -4,3 +4,62 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+
+/*POSITIONING*/
+.calculator{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width:fit-content;
+    margin: 50px auto;
+    padding: 10px;
+    gap: 15px;
+}
+
+.display{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+}
+
+.numbers-operators{
+    display: flex;
+    width: fit-content;
+    gap: 15px;
+
+}
+
+.num{
+    display: flex;
+    flex-wrap: wrap;
+    width: 190px;
+    gap: 15px;
+}
+
+.operators{
+    display: flex;
+    flex-wrap: wrap;
+    width: 55px;
+    gap: 15px;
+}
+
+.bottom{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+/*SIZING*/
+
+.num button,.operators button, .display button, .bottom button{
+    flex-grow: 2;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+input{
+    width: 72%;
+}
