@@ -17,27 +17,34 @@
         </div>
         <div class="numbers-operators">
             <div class="num">
-                <button onclick="num9()">9</button>
-                <button onclick="num8()">8</button>
-                <button onclick="num7()">7</button>
-                <button onclick="num6()">6</button>
-                <button onclick="num5()">5</button>
-                <button onclick="num4()">4</button>
-                <button onclick="num3()">3</button>
-                <button onclick="num2()">2</button>
-                <button onclick="num1()">1</button>
+                <div class="row1">
+                    <button onclick="num9()">9</button>
+                    <button onclick="num8()">8</button>
+                    <button onclick="num7()">7</button>    
+                </div>
+                <div class="row2">
+                    <button onclick="num6()">6</button>
+                    <button onclick="num5()">5</button>
+                    <button onclick="num4()">4</button>    
+                </div>
+                <div class="row3">
+                    <button onclick="num3()">3</button>
+                    <button onclick="num2()">2</button>
+                    <button onclick="num1()">1</button>
+                </div>
             </div>
             <div class="operators">
                 <button onclick="multiply()">x</button>
                 <button onclick="add()">+</button>
                 <button onclick="subtract()">-</button>
+                <button onclick="equal()">=</button>
             </div>
-        </div>
-        <div class="bottom">
-            <button onclick="period()">.</button>
-            <button onclick="num0()">0</button>
-            <button onclick="divide()">/</button>
-            <button onclick="equal()">=</button>
+            <div class="bottom">
+                <button onclick="period()">.</button>
+                <button onclick="num0()">
+                    0</button>    
+                <button onclick="divide()">/</button>
+            </div>    
         </div>
     </div>
     <script src="./main.js"></script>
