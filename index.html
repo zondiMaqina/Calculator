@@ -12,32 +12,32 @@
 
     <div class="calculator">
         <div class="display">
-            <input type="text" readonly>
-            <button>AC</button>
+            <input type="text" readonly id="display">
+            <button onclick="remove()">AC</button>
         </div>
         <div class="numbers-operators">
             <div class="num">
-                <button>9</button>
-                <button>8</button>
-                <button>7</button>
-                <button>6</button>
-                <button>5</button>
-                <button>4</button>
-                <button>3</button>
-                <button>2</button>
-                <button>1</button>
+                <button onclick="num9()">9</button>
+                <button onclick="num8()">8</button>
+                <button onclick="num7()">7</button>
+                <button onclick="num6()">6</button>
+                <button onclick="num5()">5</button>
+                <button onclick="num4()">4</button>
+                <button onclick="num3()">3</button>
+                <button onclick="num2()">2</button>
+                <button onclick="num1()">1</button>
             </div>
             <div class="operators">
-                <button>x</button>
-                <button>+</button>
-                <button>-</button>
+                <button onclick="multiply()">x</button>
+                <button onclick="add()">+</button>
+                <button onclick="subtract()">-</button>
             </div>
         </div>
         <div class="bottom">
-            <button>.</button>
-            <button>0</button>
-            <button>/</button>
-            <button>=</button>
+            <button onclick="period()">.</button>
+            <button onclick="num0()">0</button>
+            <button onclick="divide()">/</button>
+            <button onclick="equal()">=</button>
         </div>
     </div>
     <script src="./main.js"></script>
