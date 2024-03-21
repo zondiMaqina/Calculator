@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="calculator">
+    <form class="calculator">
         <div class="display">
             <input type="text" readonly id="display">
             <button onclick="remove()">AC</button>
@@ -34,19 +34,21 @@
                 </div>
             </div>
             <div class="operators">
-                <button onclick="multiply()">x</button>
-                <button onclick="add()">+</button>
-                <button onclick="subtract()">-</button>
-                <button onclick="equal()">=</button>
+                <button id="muliply">*</button>
+                <button id="addition">+</button>
+                <button id="subtract">-</button>
+                <button id="equal">=</button>
             </div>
             <div class="bottom">
                 <button class="num-opt">.</button>
-                <button class="num-opt">
-                    0</button>    
-                <button onclick="divide()">/</button>
+                <button class="num-opt">0</button>    
+                <button id="divide">/</button>
             </div>    
         </div>
-    </div>
+        <h1 id="show">
+
+        </h1>
+    </form>
     <script src="./main.js"></script>
 </body>
 </html>
