@@ -2,21 +2,15 @@
 let input =
 document.getElementById("display") ;
 
+// first and second input
 let expression = "";
+let expression2 = "";
+let firstInput = "";
+let secondInput = "";
+
+let setfirstValue = false
 
 // storage buttons
-let addition =
-document.getElementById("addition") ;
-
-let subtraction =
-document.getElementById("subtract") ;
-
-let multiplication =
-document.getElementById("multiply") ;
-
-let division =
-document.getElementById("divide") ;
-
 let equal =
 document.getElementById("equal") ;
 
@@ -26,30 +20,50 @@ document.querySelectorAll(".num-opt");
 
 // envoking function to update display
 function updateDisplay(){
-    input.value = expression;
+   return expression = firstInput;
+}
+
+function getFirstValue(){
+    return input.value = expression;
+}
+
+function getSecondValue(){
+    if (firstInput !== "" && input.value == ""){
+        secondInput = expression2;   
+        return secondInput;
+    }
 }
 
 // Each digit to display on their own on display screen;
 let eachNumber = number_option.forEach((numberButton) => {
 
     numberButton.addEventListener("click", ()=>{
-        expression = (expression) + numberButton.innerText;
-        updateDisplay();
+        expression += numberButton.innerText;
+        getFirstValue();
+    
     })
+
 });
 
 
 // arithmetic operators
-
 function addOperator(operator){
-    if (expression !== ""){
-        expression += operator;
-        updateDisplay();
-    }
+
+        setfirstValue = true;
+        firstInput = expression;
+        console.log(`firstInput is ${updateDisplay()}`);
+        expression = "";
+        input.value = "";
 }
 
+
 function remove(){
-    input.value = null;
+    expression = ""; 
+    expression2 = "";
+    firstInput = "";
+    secondInput = "";
+    input.value = "";
+    console.log(firstInput, secondInput, expression)
 }
 
 
@@ -58,3 +72,13 @@ function operate(){
 
 }
 
+equal.addEventListener("click", function(){
+    if (setfirstValue){
+        expression2 = input.value;    
+        secondInput = expression2;  
+        console.log(getSecondValue());
+        setfirstValue = false;
+    }
+
+    return input.value = Number(firstInput) + Number(secondInput);
+})
