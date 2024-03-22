@@ -1,4 +1,8 @@
+// display
+let input =
+document.getElementById("display") ;
 
+let expression = "";
 // storage buttons
 let addition =
 document.getElementById("addition") ;
@@ -12,14 +16,19 @@ document.getElementById("multiply") ;
 let division =
 document.getElementById("divide") ;
 
-let input =
-document.getElementById("display") ;
+let equal =
+document.getElementById("equal") ;
 
 let number_option =
 document.querySelectorAll(".num-opt");
 
 
- // Each digit to display on their own on display screen;
+// envoking function to update display
+function updateDisplay(){
+    input.value = expression;
+}
+
+// Each digit to display on their own on display screen;
 let eachNumber = number_option.forEach((numberButton) => {
 
     numberButton.addEventListener("click", ()=>{
@@ -27,24 +36,8 @@ let eachNumber = number_option.forEach((numberButton) => {
     })
 });
 
+
 // arithmetic operators
-
-addition.addEventListener("click", function() {
-    return "hello"
-})
-
-subtraction.addEventListener("click", function() {
-    return "hello"
-})
-
-division.addEventListener("click", function() {
-    return "hello"
-})
-
-multiplication.addEventListener("click",function() {
-
-})
-
 
 function remove(){
     input.value = null;
@@ -56,6 +49,3 @@ function operate(){
 
 }
 
-function equal(){
-
-}
