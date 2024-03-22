@@ -8,6 +8,9 @@ let expression2 = "";
 let firstInput = "";
 let secondInput = "";
 
+let chosen_operator;
+let chosen;
+
 let setfirstValue = false
 
 // storage buttons
@@ -34,6 +37,11 @@ function getSecondValue(){
     }
 }
 
+function chosenOperator(){
+    chosen = chosen_operator;
+    return chosen;
+}
+
 // Each digit to display on their own on display screen;
 let eachNumber = number_option.forEach((numberButton) => {
 
@@ -54,6 +62,11 @@ function addOperator(operator){
         console.log(`firstInput is ${updateDisplay()}`);
         expression = "";
         input.value = "";
+
+        if (firstInput !== ""){
+            chosen_operator = operator;
+            chosenOperator();
+        }
 }
 
 
@@ -65,7 +78,6 @@ function remove(){
     input.value = "";
     console.log(firstInput, secondInput, expression)
 }
-
 
 // operation function
 function operate(){
@@ -80,5 +92,15 @@ equal.addEventListener("click", function(){
         setfirstValue = false;
     }
 
-    return input.value = Number(firstInput) + Number(secondInput);
+    if (chosen_operator == "+"){
+        return input.value = Number(firstInput) + Number(secondInput);
+
+    } else if (chosen_operator == "*"){
+        return input.value = Number(firstInput) * Number(secondInput);
+
+    } else if (chosen_operator == "/"){
+        return input.value = Number(firstInput) / Number(secondInput);
+    }else if (chosen_operator == "-"){
+        return input.value = Number(firstInput) - Number(secondInput);
+    }
 })
