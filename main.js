@@ -7,10 +7,11 @@ let expression = "";
 let expression2 = "";
 let firstInput = "";
 let secondInput = "";
+let count = 0;
 
 let chosen_operator;
 let chosen;
-
+let fullExpression ;
 let setfirstValue = false
 
 // storage buttons
@@ -42,6 +43,7 @@ function chosenOperator(){
     return chosen;
 }
 
+
 // Each digit to display on their own on display screen;
 let eachNumber = number_option.forEach((numberButton) => {
 
@@ -58,11 +60,10 @@ let eachNumber = number_option.forEach((numberButton) => {
 function addOperator(operator){
 
         setfirstValue = true;
+        count++
         firstInput = expression;
         console.log(`firstInput is ${updateDisplay()}`);
         expression = "";
-        input.value = "";
-
         if (firstInput !== ""){
             chosen_operator = operator;
             chosenOperator();
@@ -71,6 +72,7 @@ function addOperator(operator){
 
 
 function remove(){
+    count =0;
     expression = ""; 
     expression2 = "";
     firstInput = "";
@@ -84,7 +86,8 @@ function operate(){
 
 }
 
-equal.addEventListener("click", function(){
+ function result(){
+
     if (setfirstValue){
         expression2 = input.value;    
         secondInput = expression2;  
@@ -93,14 +96,26 @@ equal.addEventListener("click", function(){
     }
 
     if (chosen_operator == "+"){
-        return input.value = Number(firstInput) + Number(secondInput);
+        let fullExpression =
+         input.value = Number(firstInput) + Number(secondInput);
+
+        return fullExpression;
 
     } else if (chosen_operator == "*"){
-        return input.value = Number(firstInput) * Number(secondInput);
+        let fullExpression = input.value = Number(firstInput) * Number(secondInput);
+
+        return fullExpression;
 
     } else if (chosen_operator == "/"){
-        return input.value = Number(firstInput) / Number(secondInput);
+        let fullExpression = input.value = Number(firstInput) / Number(secondInput);
+
+        return fullExpression;
+
     }else if (chosen_operator == "-"){
-        return input.value = Number(firstInput) - Number(secondInput);
+        let fullExpression = input.value = Number(firstInput) - Number(secondInput);
+
+        return fullExpression;
     }
-})
+
+}
+equal.onclick = result;
