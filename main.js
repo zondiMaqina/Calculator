@@ -3,6 +3,7 @@ let input =
 document.getElementById("display") ;
 
 let expression = "";
+
 // storage buttons
 let addition =
 document.getElementById("addition") ;
@@ -32,12 +33,20 @@ function updateDisplay(){
 let eachNumber = number_option.forEach((numberButton) => {
 
     numberButton.addEventListener("click", ()=>{
-        return input.value += numberButton.innerText;
+        expression = (expression) + numberButton.innerText;
+        updateDisplay();
     })
 });
 
 
 // arithmetic operators
+
+function addOperator(operator){
+    if (expression !== ""){
+        expression += operator;
+        updateDisplay();
+    }
+}
 
 function remove(){
     input.value = null;
