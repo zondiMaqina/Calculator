@@ -19,10 +19,9 @@ body{
     flex-basis: 320px;
     flex-direction: column;
     justify-content: space-around;
-    padding: 20px 15px;
+    padding: 15px 15px;
     background-color: #253237;
     border-radius: 5px;
-    margin: 10px;
 }
 
 .calculator input{
