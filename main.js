@@ -46,6 +46,16 @@ function saveOperationOnNumbers(operatorPressed, number1, number2) {
     num2 = undefined;
 }
 
+// clears input valuu
+function clear() {
+    calculatorOuput.value = '';
+}
+
+// for each number (node) button, adds its digit to input element display
+function addNumberToOutput(number) {
+    calculatorOuput.value += number.textContent;
+}
+
 function resetAll() {
     num1 = undefined;
     num2 = undefined;
