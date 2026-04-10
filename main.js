@@ -14,7 +14,7 @@ function areNumbersSavedAvailable() {
 // operator is a node
 function saveOperatorPressed(operator) {
     if (['+', '-', '/', 'x'].includes(operator.textContent)) 
-        operatorChosen = operator.textContent;
+        return operatorChosen = operator.textContent;
 }
 
 function saveNum1OnOutput() {
@@ -60,19 +60,23 @@ function resetAll() {
     operatorChosen = undefined;
 }
 
-// when operator is pressed
-// it will assign current number on output to num1 given ouput not empty
-// it will save operator chosen to operator var
-// if empty it does nothing
-
-// if num1 already occupied assign ouput on value to num2
 
 function saveNumberAndOperator(operatorPressed) {
     if (isCalculatorOutputNotEmpty && num1 === undefined) {
         saveNum1OnOutput();
         saveOperatorPressed(operatorPressed);
         clear();
-    } else if (num1 !== undefined ) {
+    } else if (num1 !== undefined && isCalculatorOutputNotEmpty) {
         saveNum2OnOutput();
+        let operator = saveOperatorPressed(operatorPressed);
+        saveOperationOnNumbers(operator, num1, num2);
+    };
+}
+
+function displayTotal() {
+    if (num1 !== undefined && isCalculatorOutputNotEmpty) {
+        num2 = Number(calculatorOuput.value);
+        saveOperationOnNumbers(operatorChosen, num1, num2);
+        calculatorOuput.value = num1;
     };
 }
