@@ -1,6 +1,9 @@
 # Calculator
 A simple calculator created with 0 reliance on built-in methods for operations.
 
+> [!NOTE] 
+> The calculator can perfom complex calculations but... it does not respect, BODMAS principles, for now...
+
 ## Challenges
 
 - Allowing simple operations without any reliance ojn built-in methods such as eval().
