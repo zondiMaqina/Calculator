@@ -80,3 +80,10 @@ function displayTotal() {
         calculatorOuput.value = num1;
     };
 }
+
+function deleteNumber() {
+    calculatorOuput.value = calculatorOuput.value.slice(0, calculatorOuput.value.length - 1)
+};
+
+// add eventlisteners to whole body
+// delegate to numbers, operators, AC, euquals and delete
