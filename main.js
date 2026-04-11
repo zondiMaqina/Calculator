@@ -1,3 +1,4 @@
+const calculatorBody = document.querySelector('.calculator')
 const calculatorOuput = document.querySelector('input');
 let num1, num2, operatorChosen;
 
@@ -58,26 +59,34 @@ function resetAll() {
     num1 = undefined;
     num2 = undefined;
     operatorChosen = undefined;
+    calculatorOuput.value = '';
 }
 
+function resetVars() {
+    num1 = undefined;
+    num2 = undefined;
+    operatorChosen = undefined;
+}
 
 function saveNumberAndOperator(operatorPressed) {
-    if (isCalculatorOutputNotEmpty && num1 === undefined) {
+    if (isCalculatorOutputNotEmpty() && num1 == undefined) {
         saveNum1OnOutput();
         saveOperatorPressed(operatorPressed);
-        clear();
-    } else if (num1 !== undefined && isCalculatorOutputNotEmpty) {
+        clear();        
+    } else if (num1 !== undefined && isCalculatorOutputNotEmpty()) {
         saveNum2OnOutput();
+        clear();
         let operator = saveOperatorPressed(operatorPressed);
         saveOperationOnNumbers(operator, num1, num2);
     };
 }
 
 function displayTotal() {
-    if (num1 !== undefined && isCalculatorOutputNotEmpty) {
+    if (num1 !== undefined && isCalculatorOutputNotEmpty()) {
         num2 = Number(calculatorOuput.value);
         saveOperationOnNumbers(operatorChosen, num1, num2);
         calculatorOuput.value = num1;
+        resetVars();
     };
 }
 
@@ -85,5 +94,18 @@ function deleteNumber() {
     calculatorOuput.value = calculatorOuput.value.slice(0, calculatorOuput.value.length - 1)
 };
 
-// add eventlisteners to whole body
-// delegate to numbers, operators, AC, euquals and delete
+calculatorBody.addEventListener('click', function(event) {
+    if (event.target.className === 'number') {
+        addNumberToOutput(event.target);
+    } else if (event.target.classList.contains('operator')) {
+        saveNumberAndOperator(event.target);
+    } else if ((event.target.className === 'equal')) {
+        displayTotal();
+    } else if (event.target.className === 'clear') {
+        resetAll();
+    } else if (event.target.className === 'clear') {
+        resetAll();
+    } else if (event.target.className === 'delete') {
+        deleteNumber();
+    };
+});
