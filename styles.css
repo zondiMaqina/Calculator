@@ -50,11 +50,11 @@ body{
     box-shadow: none;
 }
 
-.calculator button.operator{
+.calculator button.operator, button.equal{
     color: #06d6a0;
 }
 
-.calculator button.operator:hover{
+.calculator button.operator:hover, button.equal:hover{
     border: 1px solid #06d6a0;
 }
 
